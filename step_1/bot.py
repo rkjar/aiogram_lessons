@@ -1,4 +1,5 @@
 import os
+import logging
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
@@ -7,6 +8,7 @@ TOKEN = os.getenv("TOKEN")
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
+logging.basicConfig(level=logging.INFO)
 
 
 @dp.message_handler(commands=['start'])
